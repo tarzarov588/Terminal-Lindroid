@@ -11,7 +11,7 @@ android {
     defaultConfig {
         applicationId 'com.aarch64.terminal.github.linux'
 
-        minSdk 23
+        minSdk 24
         targetSdk 36
 
         versionCode 38571591
@@ -26,4 +26,10 @@ android {
     kotlinOptions {
         jvmTarget = '17'
     }
+}
+
+dependencies {
+    implementation 'com.termux:terminal-view:0.118.0'
+
+    implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
 }
