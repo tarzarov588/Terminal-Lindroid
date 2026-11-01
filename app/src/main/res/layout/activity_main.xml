@@ -5,32 +5,121 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#000000"
-    android:padding="12dp">
+    android:padding="8dp">
 
-    <TextView
-        android:id="@+id/terminalOutput"
+    <!-- Saída do terminal -->
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        android:fontFamily="monospace"
-        android:textIsSelectable="true"
-        android:gravity="bottom"
-        android:padding="8dp"
-        android:text="" />
+        android:fillViewport="true">
 
-    <EditText
-        android:id="@+id/terminalInput"
+        <TextView
+            android:id="@+id/terminalOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:fontFamily="monospace"
+            android:textIsSelectable="true"
+            android:text="" />
+
+    </ScrollView>
+
+    <!-- Botões adicionais -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:fillViewport="false"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/keyEsc"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="ESC" />
+
+            <Button
+                android:id="@+id/keyCtrl"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="CTRL" />
+
+            <Button
+                android:id="@+id/keyAlt"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="ALT" />
+
+            <Button
+                android:id="@+id/keyTab"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="TAB" />
+
+            <Button
+                android:id="@+id/keyUp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="↑" />
+
+            <Button
+                android:id="@+id/keyDown"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="↓" />
+
+            <Button
+                android:id="@+id/keyLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="←" />
+
+            <Button
+                android:id="@+id/keyRight"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="→" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Linha de comando -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:hint="$ Digite um comando"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#888888"
-        android:fontFamily="monospace"
-        android:textSize="14sp"
-        android:imeOptions="actionDone"
-        android:inputType="text" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="~ $"
+            android:textColor="#00FF66"
+            android:textSize="16sp"
+            android:fontFamily="monospace"
+            android:padding="6dp" />
+
+        <EditText
+            android:id="@+id/terminalInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:hint="[]"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#888888"
+            android:fontFamily="monospace"
+            android:textSize="14sp"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:backgroundTint="#00FF66" />
+
+    </LinearLayout>
 
 </LinearLayout>
