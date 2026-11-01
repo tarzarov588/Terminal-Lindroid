@@ -6,7 +6,6 @@ import java.io.File
 class LindroidEnvironment(context: Context) {
 
     val root = File(context.filesDir, "lindroid")
-
     val usr = File(root, "usr")
     val bin = File(usr, "bin")
     val lib = File(usr, "lib")
@@ -15,8 +14,6 @@ class LindroidEnvironment(context: Context) {
     val tmp = File(root, "tmp")
     val home = File(root, "home")
     val downloads = File(home, "downloads")
-
-    val bash = File(bin, "bash")
 
     fun initialize(): Boolean {
         val directories = listOf(
@@ -31,8 +28,8 @@ class LindroidEnvironment(context: Context) {
             downloads
         )
 
-        return directories.all { directory ->
-            directory.exists() || directory.mkdirs()
+        return directories.all {
+            it.exists() || it.mkdirs()
         }
     }
 
@@ -40,7 +37,7 @@ class LindroidEnvironment(context: Context) {
         return arrayOf(
             "HOME=${home.absolutePath}",
             "PREFIX=${usr.absolutePath}",
-            "PATH=${bin.absolutePath}:/system/bin",
+            "PATH=${bin.absolutePath}:/system/bin:/system/xbin",
             "TMPDIR=${tmp.absolutePath}",
             "LANG=C.UTF-8",
             "TERM=xterm-256color"
