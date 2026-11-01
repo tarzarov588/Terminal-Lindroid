@@ -15,6 +15,8 @@ class LindroidEnvironment(context: Context) {
     val home = File(root, "home")
     val downloads = File(home, "downloads")
 
+    val bash = File(bin, "bash")
+
     fun initialize(): Boolean {
         val directories = listOf(
             root,
@@ -28,8 +30,8 @@ class LindroidEnvironment(context: Context) {
             downloads
         )
 
-        return directories.all {
-            it.exists() || it.mkdirs()
+        return directories.all { directory ->
+            directory.exists() || directory.mkdirs()
         }
     }
 
