@@ -21,13 +21,13 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Configurar Gradle
+      - name: Instalar Gradle 8.13
         uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.13'
 
       - name: Compilar APK
-        run: |
-          chmod +x gradlew
-          ./gradlew assembleDebug
+        run: gradle assembleDebug
 
       - name: Disponibilizar APK
         uses: actions/upload-artifact@v4
