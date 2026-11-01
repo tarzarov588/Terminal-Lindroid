@@ -26,7 +26,6 @@
         android:layout_height="wrap_content"
         android:singleLine="true"
         android:hint="$ Digite um comando"
-        android:hintTextColor="#888888"
         android:textColor="#FFFFFF"
         android:textColorHint="#888888"
         android:fontFamily="monospace"
