@@ -24,8 +24,6 @@ class LindroidTerminalClient : TerminalSessionClient {
 
     override fun onTerminalCursorStateChange(state: Boolean) {}
 
-    override fun setTerminalShellPid(session: TerminalSession, pid: Int) {}
-
     override fun getTerminalCursorStyle(): Int? = null
 
     override fun logError(tag: String, message: String) {}
